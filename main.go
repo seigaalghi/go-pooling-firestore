@@ -4,9 +4,9 @@ import (
 	"fmt"
 
 	"github.com/gin-gonic/gin"
-	"github.com/seigaalghi/pooling-firestore/controller"
-	"github.com/seigaalghi/pooling-firestore/database"
-	"github.com/seigaalghi/pooling-firestore/middlewares"
+	"github.com/seigaalghi/go-pooling-firestore/controller"
+	"github.com/seigaalghi/go-pooling-firestore/database"
+	"github.com/seigaalghi/go-pooling-firestore/middlewares"
 )
 
 func main() {

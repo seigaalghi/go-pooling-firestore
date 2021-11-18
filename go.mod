@@ -1,4 +1,4 @@
-module github.com/seigaalghi/pooling-firestore
+module github.com/seigaalghi/go-pooling-firestore
 
 go 1.16
 
