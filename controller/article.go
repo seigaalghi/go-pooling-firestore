@@ -5,6 +5,7 @@ import (
 
 	"cloud.google.com/go/firestore"
 	"github.com/gin-gonic/gin"
+	"github.com/seigaalghi/go-pooling-firestore/database"
 	"google.golang.org/api/iterator"
 )
 
@@ -15,6 +16,16 @@ func GetArticle(ctx *gin.Context) {
 	if err != nil {
 		fmt.Println(err.Error())
 	}
+	doc.DataTo(&output)
+	ctx.JSON(200, gin.H{
+		"data": output,
+	})
+}
+
+func GetArticleFirestore(ctx *gin.Context) {
+	var output map[string]interface{}
+	// db, _ := ctx.MustGet("dbV1").(*firestore.Client)
+	doc := database.GetArticleFirestore(ctx)
 	doc.DataTo(&output)
 	ctx.JSON(200, gin.H{
 		"data": output,
