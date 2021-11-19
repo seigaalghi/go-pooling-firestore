@@ -26,6 +26,8 @@ func main() {
 	v1.Use(middlewares.DbSetter("dbV1", con1))
 	v1.GET("/", controller.GetArticle)
 
+	v1.GET("/firestore", controller.GetArticleFirestore)
+
 	v2.GET("/", middlewares.DbSetter("dbV2", con2), controller.GetArticles)
 	server.Run(":5000")
 }
